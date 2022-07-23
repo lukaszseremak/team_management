@@ -18,7 +18,7 @@ services:
       args:
         - PROXY=$PROXY
     environment:
-      DATABASE_URL: postgresql://postgres@database:5432/teams_management
+      DATABASE_URL: postgresql://postgres@database:5432/tsm
     ports:
       - "8080:8080"
     volumes:
@@ -32,7 +32,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_HOST_AUTH_METHOD: trust
-      POSTGRES_DB: teams_management
+      POSTGRES_DB: tsm
     ports:
       - "5432:5432"
     volumes:
