@@ -1,0 +1,42 @@
+version: "3"
+services:
+
+  webserver:
+    build: 
+      context: apps/web
+      dockerfile: devops/images/web/Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - api
+
+  api:
+    build:
+      context: apps/api
+      dockerfile: devops/images/api/Dockerfile
+      args:
+        - PROXY=$PROXY
+    environment:
+      DATABASE_URL: postgresql://postgres@database:5432/teams_management
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./apps/api:/api/
+    depends_on:
+      - database
+    command: uvicorn src.delivery.web.run:app --reload --host 0.0.0.0 --port 8080 --root-path /api
+
+  database:
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_DB: teams_management
+    ports:
+      - "5432:5432"
+    volumes:
+      - ${DATABASE_VOLUME}:/var/lib/postgresql/data/
+
+volumes:
+  database-data:
