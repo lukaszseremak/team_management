@@ -15,8 +15,6 @@ services:
     build:
       context: apps/api
       dockerfile: devops/images/api/Dockerfile
-      args:
-        - PROXY=$PROXY
     environment:
       DATABASE_URL: postgresql://postgres@database:5432/tsm
     ports:

@@ -1,9 +1,9 @@
 from pydio.api import Provider
-
 from src.delivery.config import Config
 from src.delivery.config import config as web_config
 
 from .database import provider as database_provider
+from .teams import provider as teams_provider
 
 
 def build_factory():
@@ -13,5 +13,6 @@ def build_factory():
     factory = Provider()
     factory.attach(core_provider)
     factory.attach(database_provider)
+    factory.attach(teams_provider)
 
     return factory

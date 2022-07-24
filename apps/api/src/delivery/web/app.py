@@ -3,9 +3,13 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.openapi.docs import get_swagger_ui_html
 from fastapi.openapi.utils import get_openapi
 from pydio.api import Injector
-
 from src.delivery.config import config as web_config
 from src.delivery.di import build_factory
+from src.delivery.web.api.rest import teams
+
+
+def _register_routes(app):
+    app.include_router(teams.router, prefix="/teams", tags=["Teams Tag"])
 
 
 def _configure_dependency_injector(app):
@@ -41,7 +45,9 @@ def create_app():
             tags=app.openapi_tags,
         )
 
-        monkey_patched_openapi = {key: value for key, value in openapi.items() if key != "paths"}
+        monkey_patched_openapi = {
+            key: value for key, value in openapi.items() if key != "paths"
+        }
         monkey_patched_openapi["paths"] = {}
         for key, value in openapi["paths"].items():
             print(app.root_path)
@@ -50,6 +56,7 @@ def create_app():
         return monkey_patched_openapi
 
     _configure_dependency_injector(app)
+    _register_routes(app)
     _configure_cors(app)
 
     return app
