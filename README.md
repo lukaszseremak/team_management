@@ -14,8 +14,8 @@ The tool was built according to [Clean Architecture of Uncle Bob](https://blog.c
 ## Run
 
 ```bash
-$ docker-compose -f devops/images/docker-compose.yml build
-$ docker-compose -f devops/images/docker-compose.yml up
+$ docker-compose build
+$ docker-compose up
 ```
 
 ## Contributing
