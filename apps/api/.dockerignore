@@ -1,9 +1,0 @@
-# leftover from package built by tox
-**/*.egg-info/
-# leftovers from running tox envs
-**/__pycache__/
-.coverage/
-.mypy_cache/
-.tox/
-# git tree is redundant in docker context
-.git/
