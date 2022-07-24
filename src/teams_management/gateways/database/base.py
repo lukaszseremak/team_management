@@ -4,7 +4,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import Session as AlchemySession
 
-from teams_management.gateways.storage import IsolationLevel, IStorageAggregate
+from src.teams_management.gateways.storage import IsolationLevel, IStorageAggregate
 
 Base = declarative_base()
 

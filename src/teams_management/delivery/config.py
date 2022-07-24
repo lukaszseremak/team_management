@@ -10,7 +10,7 @@ class DatabasePool(BaseModel):
 
 
 class Config(BaseSettings):
-    DATABASE_URL: PostgresDsn = PostgresDsn("postgresql://postgres@localhost/tsm")  # noqa: WPS115
+    DATABASE_URL: PostgresDsn = "postgresql://postgres@localhost/tsm"  # type: ignore # noqa: WPS115
 
     class Env(str, Enum):  # noqa: WPS600
         PRODUCTION = "production"  # noqa: WPS115

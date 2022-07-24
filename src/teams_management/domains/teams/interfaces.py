@@ -4,7 +4,7 @@ from uuid import UUID
 
 from pydantic import BaseModel
 
-from teams_management.domains.teams import entities
+from src.teams_management.domains.teams import entities
 
 
 class TeamNotFound(BaseException):  # noqa: WPS418

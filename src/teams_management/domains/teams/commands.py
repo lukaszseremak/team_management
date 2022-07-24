@@ -1,4 +1,4 @@
-from teams_management.domains.teams import gateways, interfaces
+from src.teams_management.domains.teams import gateways, interfaces
 
 
 class CreateTeam(interfaces.ICreateTeam):

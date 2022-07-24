@@ -2,14 +2,14 @@ version: '3'
 services:
   api:
     build:
-      context: ../../
+      context: ./
       dockerfile: devops/images/teams_management/Dockerfile
+      args:
+        - PROXY=$PROXY
     environment:
       DATABASE_URL: postgresql://postgres@database:5432/tsm
-    ports:
-      - '8080:8080'
     volumes:
-      - ./apps/api:/api/
+      - ./:/api/
     depends_on:
       - database
     command: uvicorn src.teams_management.delivery.web.run:app --reload --host 0.0.0.0 --port 8080 --root-path /api

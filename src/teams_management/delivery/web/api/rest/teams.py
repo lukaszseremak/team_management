@@ -3,8 +3,8 @@ from uuid import UUID
 
 from fastapi import APIRouter, HTTPException, Request
 
-from teams_management.delivery.web.api.rest import models
-from teams_management.domains.teams import entities, interfaces
+from src.teams_management.delivery.web.api.rest import models
+from src.teams_management.domains.teams import entities, interfaces
 
 router = APIRouter()
 

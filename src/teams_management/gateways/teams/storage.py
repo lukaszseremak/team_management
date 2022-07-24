@@ -1,9 +1,9 @@
 from typing import List
 from uuid import UUID
 
-from teams_management.domains.teams import entities, gateways
-from teams_management.gateways.database import tables
-from teams_management.gateways.storage import IStorageAggregate
+from src.teams_management.domains.teams import entities, gateways
+from src.teams_management.gateways.database import tables
+from src.teams_management.gateways.storage import IStorageAggregate
 
 
 class DatabaseTeamsStorage(gateways.ITeamsStorage):

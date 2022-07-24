@@ -1,8 +1,8 @@
 from pydio.api import Injector, Provider
 
-from teams_management.domains.teams import commands, gateways, interfaces, queries
-from teams_management.gateways.storage import IStorageAggregate
-from teams_management.gateways.teams.storage import DatabaseTeamsStorage
+from src.teams_management.domains.teams import commands, gateways, interfaces, queries
+from src.teams_management.gateways.storage import IStorageAggregate
+from src.teams_management.gateways.teams.storage import DatabaseTeamsStorage
 
 provider = Provider()
 

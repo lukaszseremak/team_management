@@ -1,9 +1,9 @@
 from pydio.api import Injector, Provider
 from sqlalchemy.orm import Session as AlchemyDatabase
 
-from teams_management.delivery.config import Config
-from teams_management.gateways.database.base import StorageAggregate, init_db_engine
-from teams_management.gateways.storage import IStorageAggregate
+from src.teams_management.delivery.config import Config
+from src.teams_management.gateways.database.base import StorageAggregate, init_db_engine
+from src.teams_management.gateways.storage import IStorageAggregate
 
 provider = Provider()
 

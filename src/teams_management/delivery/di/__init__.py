@@ -1,7 +1,7 @@
 from pydio.api import Provider
 
-from teams_management.delivery.config import Config
-from teams_management.delivery.config import config as web_config
+from src.teams_management.delivery.config import Config
+from src.teams_management.delivery.config import config as web_config
 
 from .database import provider as database_provider
 from .teams import provider as teams_provider

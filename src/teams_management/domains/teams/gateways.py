@@ -2,7 +2,7 @@ import abc
 from typing import List
 from uuid import UUID
 
-from teams_management.domains.teams import entities
+from src.teams_management.domains.teams import entities
 
 
 class NotFoundError(Exception):
