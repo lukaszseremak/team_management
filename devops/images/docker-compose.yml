@@ -3,7 +3,7 @@ services:
   api:
     build:
       context: ../../
-      dockerfile: devops/images/api/Dockerfile
+      dockerfile: devops/images/teams_management/Dockerfile
     environment:
       DATABASE_URL: postgresql://postgres@database:5432/tsm
     ports:
